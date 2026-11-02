@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>记账与活动簿 · 隐私政策</title>
+<style>
+  :root { color-scheme: light; --bg:#f4f5f1; --surface:#fff; --text:#18211d; --sub:#616c66; --line:#e2e6df; --primary:#2f6b5f; --soft:#ddebe5; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--text); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif; line-height:1.75; }
+  main { max-width:760px; margin:0 auto; padding:40px 20px 72px; }
+  header { padding:8px 0 28px; border-bottom:1px solid var(--line); margin-bottom:28px; }
+  .brand { color:var(--primary); font-size:14px; letter-spacing:.08em; font-weight:600; }
+  h1 { font-size:30px; line-height:1.25; margin:10px 0 8px; letter-spacing:-.02em; }
+  .meta { color:var(--sub); font-size:14px; }
+  h2 { font-size:20px; margin:34px 0 10px; letter-spacing:-.01em; }
+  h3 { font-size:16px; margin:22px 0 6px; }
+  p, li { font-size:15px; }
+  ul { padding-left:22px; }
+  .card { background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:18px 20px; margin:18px 0; }
+  .note { background:var(--soft); border-color:transparent; }
+  .muted { color:var(--sub); }
+  code { background:#eef2ed; padding:1px 5px; border-radius:5px; font-size:.92em; }
+  a { color:var(--primary); }
+  footer { margin-top:40px; padding-top:18px; border-top:1px solid var(--line); color:var(--sub); font-size:13px; }
+  @media (prefers-color-scheme: dark) {
+    :root { color-scheme: dark; --bg:#0f1412; --surface:#171d1a; --text:#edf2ee; --sub:#9eaaa4; --line:#2b342f; --primary:#83c3b0; --soft:#1c2a25; }
+    code { background:#24302b; }
+  }
+</style>
+</head>
+<body>
+<main>
+<header>
+  <div class="brand">记账与活动簿</div>
+  <h1>隐私政策</h1>
+  <div class="meta">版本：2.0.0　|　生效日期：[2026.11.2]　|　更新日期：[2026.11.2]</div>
+</header>
+
+<p>本政策说明「记账与活动簿」（以下简称“本应用”）如何处理你的信息。本应用由个人开发者 <strong>[老祖]</strong> 开发和运营，联系邮箱：<a href="mailto:3276191927@qq.com">3276191927@qq.com</a>。</p>
+
+<div class="card note">
+  <strong>一句话说明：</strong>本应用默认把活动、收支、分类、标签、预算、定期支出和收据照片保存在你的手机本地；不要求注册账号，不接入广告或统计分析 SDK，不把数据上传到开发者服务器。只有你主动开启 WebDAV 同步时，数据才会经过端到端加密后写入你自己提供的网盘地址。
+</div>
+
+<h2>1. 我们处理哪些信息</h2>
+<p>为了实现记账和活动记录功能，本应用会在你的设备本地处理以下信息：</p>
+<ul>
+  <li>活动记录：日期、开始/结束时间、时长、事项名称、分类、标签、备注；</li>
+  <li>收支记录：类型、日期、金额、分类、支付方式、标签、备注、收据照片；</li>
+  <li>分类、标签、预算、定期支出、设置和编辑历史；</li>
+  <li>你主动选择的导入文件，以及你主动导出的 CSV、Excel、JSON 备份文件；</li>
+  <li>可选 WebDAV 同步所需的网盘地址、用户名，以及你设置的同步密钥。</li>
+</ul>
+<p>本应用不收集设备标识符、通讯录、短信、精确位置、应用列表或广告标识，也不建立用户画像。</p>
+
+<h2>2. 权限与用途</h2>
+<ul>
+  <li><strong>相机/照片</strong>：仅在你主动添加收据时，通过系统相机或系统照片选择器读取你选中的图片。本应用不会在后台拍照，也不会扫描相册。</li>
+  <li><strong>网络与网络状态</strong>：仅用于你主动开启的 WebDAV 同步，以及测试网盘连接。不开启同步时，本应用的核心功能可离线使用。</li>
+  <li><strong>文件选择/保存</strong>：通过 Android 系统文件选择器导入或导出备份、CSV、Excel 和收据，不申请广泛存储权限。</li>
+</ul>
+<p>本应用不申请通知权限。</p>
+
+<h2>3. 可选 WebDAV 同步</h2>
+<p>WebDAV 同步默认关闭，只有你在“设置 → 数据与同步 → 同步”中主动开启后才会工作。开启后：</p>
+<ul>
+  <li>你需要填写自己的 WebDAV 地址、账号和密码；地址仅支持 HTTPS；</li>
+  <li>网盘密码与同步密钥保存在系统安全存储中，不写入普通配置文件；</li>
+  <li>同步数据在离开设备前，使用你设置的同步密钥进行 AES-256-GCM 端到端加密；</li>
+  <li>加密文件写入你自己的 WebDAV 目录，开发者无法读取；</li>
+  <li>网盘服务商可能按其隐私政策处理文件、账号和访问日志，这不受本应用控制；</li>
+  <li>多设备使用同一同步密钥时，才会得到同一份解密数据；密钥丢失后，开发者无法帮你恢复。</li>
+</ul>
+<p>收据附件默认只同步元数据，不同步原图；冲突时本应用会生成“冲突副本”，不会静默覆盖。</p>
+
+<h2>4. 系统自动备份</h2>
+<p>你选择保留 Android 系统自动备份。开启后，操作系统可能把本应用的数据库和本地文件备份到你登录的厂商云或 Google 账户；这属于系统能力，开发者不接收、不读取该备份。</p>
+<p>为降低密钥泄露风险，本应用的备份规则排除了保存同步密钥的 <code>sharedpref</code>；数据库和收据文件可能进入系统备份。系统云备份可能在你执行“清除所有数据”或卸载应用后仍保留副本，具体以手机厂商/系统账户的备份策略为准。</p>
+
+<h2>5. 导出、导入与备份文件</h2>
+<p>当你主动导出 CSV、Excel 或 JSON 备份时，文件会保存到你通过系统文件选择器指定的位置。该文件不再受本应用沙箱保护，请自行保管。导入文件只用于解析并写入本地数据库，不会上传到开发者服务器。</p>
+
+<h2>6. 共享、委托处理与第三方</h2>
+<p>本应用不向开发者服务器上传数据，不出售个人信息，不接入广告 SDK，不接入统计分析 SDK。当前版本使用的第三方开源组件仅用于本地功能，例如图片选择、文件选择、SQLite、加密和 Excel 读写；它们不向开发者回传你的账本内容。</p>
+<p>只有在你主动使用 WebDAV 同步时，加密文件才会传输给你选择的网盘服务商。你应同时阅读该服务商的隐私政策。</p>
+
+<h2>7. 存储与安全</h2>
+<ul>
+  <li>本地数据存放在应用私有目录，离开应用沙箱需要系统权限；</li>
+  <li>WebDAV 同步只允许 HTTPS，避免账号、密码和同步数据在公网明文传输；</li>
+  <li>同步数据使用 AES-256-GCM 加密，密钥由你保管；</li>
+  <li>请为手机设置锁屏密码，并妥善保管导出的备份和同步密钥；</li>
+  <li>任何系统、网盘或网络环境都不存在绝对安全，请自行评估风险。</li>
+</ul>
+
+<h2>8. 保存期限与删除</h2>
+<p>本地数据默认一直保存，直到你在应用内删除、清除所有数据或卸载应用。设置中的“清除所有数据”会删除本地业务数据、收据原图、编辑历史、同步密钥和本地同步基线；不会删除你已经导出的文件、网盘上的加密同步文件，也不会删除系统云备份。</p>
+<p>如需删除 WebDAV 上的同步文件，请登录你的网盘删除对应目录中的加密文件；开发者无法代为删除。系统云备份请在手机系统的备份设置中管理。</p>
+
+<h2>9. 未成年人</h2>
+<p>本应用不面向 14 周岁以下儿童单独提供服务，也不主动收集儿童个人信息。未成年人应在监护人指导下使用。</p>
+
+<h2>10. 政策更新</h2>
+<p>当功能、权限或数据处理方式发生实质变化时，本政策会更新版本号和更新日期。重大变化会在应用内或商店说明中提示。继续使用更新后的版本，表示你已阅读更新后的政策。</p>
+
+<h2>11. 联系我们</h2>
+<p>如对本政策、数据删除或个人信息处理有疑问，请发送邮件至 <a href="mailto:3276191927@qq.com">3276191927@qq.com</a>。我们会在合理期限内回复。</p>
+
+<footer>
+  本页为「记账与活动簿」隐私政策，部署地址：[部署后的隐私政策网址]。<br>
+  开发者：[老祖]　|　应用版本：2.0.0
+</footer>
+</main>
+</body>
+</html>
